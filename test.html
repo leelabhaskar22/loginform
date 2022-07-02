@@ -6,31 +6,49 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styel.css">
+    <link rel="stylesheet" href="styel.css">
     <title>login</title>
+    <script type=text/javascript>
+        function validate() {
+            if (document.getElementById('username').value=='') {
+                alert('Please enter username');
+                document.getElementById('username').focus();
+            } else if (document.getElementById('password').value=='') {
+                alert('Please enter password');
+                document.getElementById('password').focus();
+            } else if (document.getElementById('captcha').value=='') {
+                alert('Please enter captcha');document.getElementById('captcha').focus();
+            } else {
+                document.getElementById('billGenerator').submit();
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="card">
         <div >
         <h3 class="h1" >GENERATE DEFECTIVE LIST</h3>
         <p class="line"></p>
-        <form action="">
+        <form name="billGenerator" id="billGenerator" method="POST" action="/app/v2/defects/login">
          <div class="container">
             <label class="label"><b> <i  class="fa fa-user" ></i> Username</i> </b></label><br>
-            <input  name="billGenerator" id="billGenerator" method="POST" action="/app/v2/defects/login" class="box" type="text" placeholder="Enter Username"><br>
-            <label  class="label" for="pass"><b><i class="fa fa-key" ></i> Password</b></label><br>
-            <input  class="box" type="password" placeholder="Enter Password" id="password" name="password"  required><br>
+            <input  class="box" id="username" type="text" placeholder="Enter Username"><br>
+            <label  class="label"><b><i class="fa fa-key" ></i> Password</b></label><br>
+            <input  class="box" id="password" type="password" placeholder="Enter Password" id="password" name="password" ><br>
             
-            <label class="label" for="cap"><i class="fa fa-reddit-alien" ></i> <b>Captcha</b></label><br>
+            <label class="label"><i class="fa fa-reddit-alien" ></i> <b>Captcha</b></label><br>
             
-            <input class="box" type="captcha" id="captcha" placeholder="Enter Captcha From Below" name="captcha" required><br>
-           
-           
-            <input class='check1' type="checkbox" name="includeOther"> INCLUDE OTHERS <br>
+            <input class="box" id="captcha" type="captcha" id="captcha" placeholder="Enter Captcha From Below" name="captcha" ><br><br>
+
+             <img src="https://captcha-bucket.s3.ap-south-1.amazonaws.com/captcha.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220702T160207Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=AKIA2EJDCAW23F777MDM%2F20220702%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=43cb0e627aa53b38ba14ab16c3f8d1f54e9eb69818f14b2a5c8b909e7517ab8c">
+             <br>
+            <input class='check' type="checkbox" name="includeOther"> INCLUDE OTHERS <br>
            <input class='check' type="checkbox" > VIEW COMPLAINT NUMBERS<br>
            <input type="hidden" name="server" id="serverId" value="kb4">
            <input type="hidden" name="id" id="sessionId" value="880AB3F06B84ECAFC47DCAEFEC458FE4">
-            <button  class='submit' type="submit">Login</button>
+                         <button class='submit' type=reset>Reset</button>
+                         <button class='submit' type=button onclick=javascript:validate()>Login</button>
+
             <label><br>
                 
             </label></div>
