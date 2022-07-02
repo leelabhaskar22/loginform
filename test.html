@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/2a4e6a3153.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styel.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="card">
+        <div >
+        <h3 class="h1" >GENERATE DEFECTIVE LIST</h3>
+        <p class="line"></p>
+        <form action="">
+         <div class="container">
+            <label class="label"><b> <i  class="fa fa-user" ></i> Username</i> </b></label><br>
+            <input  name="billGenerator" id="billGenerator" method="POST" action="/app/v2/defects/login" class="box" type="text" placeholder="Enter Username"><br>
+            <label  class="label" for="pass"><b><i class="fa fa-key" ></i> Password</b></label><br>
+            <input  class="box" type="password" placeholder="Enter Password" id="password" name="password"  required><br>
+            
+            <label class="label" for="cap"><i class="fa fa-reddit-alien" ></i> <b>Captcha</b></label><br>
+            
+            <input class="box" type="captcha" id="captcha" placeholder="Enter Captcha From Below" name="captcha" required><br>
+           
+           
+            <input class='check1' type="checkbox" name="includeOther"> INCLUDE OTHERS <br>
+           <input class='check' type="checkbox" > VIEW COMPLAINT NUMBERS<br>
+           <input type="hidden" name="server" id="serverId" value="kb4">
+           <input type="hidden" name="id" id="sessionId" value="880AB3F06B84ECAFC47DCAEFEC458FE4">
+            <button  class='submit' type="submit">Login</button>
+            <label><br>
+                
+            </label></div>
+          </div>
+    </form>
+</div>
+</body>
+</html>
